@@ -50,15 +50,27 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href=".">Introduction</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#commands">Commands</a>
+    <li class="toctree-l2"><a class="reference internal" href="#project-structure">Project Structure</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#project-layout">Project layout</a>
+    <li class="toctree-l2"><a class="reference internal" href="#features">Features</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#release-notes">Release Notes</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#roadmap">Roadmap</a>
     </li>
     </ul>
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="quickstart/">Quickstart</a>
+                    <li class="toctree-l1"><a class="reference internal" href="gettingstarted/">Getting Started</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="support/">Support</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="devreference/">Developer Reference</a>
                     </li>
                 </ul>
       </div>
@@ -94,20 +106,32 @@
             <div class="section">
               
                 <h1 id="introduction">Introduction</h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
-</ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
+<p>GymOS is an open source, gym managment solution aimed at helping individual trainers and small studios build their brand and connect with clients. </p>
+<p>It's designed to be a PWA (Progressive Web App), meaning that users have the option to "install" it on their devices and interact with it similar to how they interact with native applications.</p>
+<p>It's also designed to work with various outside systems to offload tasks such as email marketing, text and email reminders, payment processing and more.</p>
+<p>GymOS is free and open source, so you can <a href="https://github.com/KMWilliams-Dev/GymOS/releases">download</a>, build, and deploy the application yourself folowing the documentation, or you can contact me via <a href="mailto:kevin.williams@kevinwilliams.dev">mail</a> or <a href="https://discord.gg/22ZaTAZP45">Discord</a> and I can deploy it on your behalf for a small fee.</p>
+<h2 id="project-structure">Project Structure</h2>
+<pre><code>Client/ # The Client project. This is what users actually interact with via the website.
+
+DataModel/  # The DataModel and Database definitions.
+
+docs/   # The documentation files.
+
+Server/ # The Server project. This is what is published to the host machine.
+
+System/ # The Actor system that contains business logic for GymOS.
+
+Services/   # This is where the services that interact with third party systems reside.
+
+LICENSE    # The MIT License file.
+README.md  # The project readme file.
 </code></pre>
+<h2 id="features">Features</h2>
+<p>Coming Soon!</p>
+<h2 id="release-notes">Release Notes</h2>
+<p>Coming Soon!</p>
+<h2 id="roadmap">Roadmap</h2>
+<p>Coming Soon!</p>
               
             </div>
           </div>
@@ -115,7 +139,7 @@ docs/
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="quickstart/" class="btn btn-neutral float-right" title="Quickstart">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="gettingstarted/" class="btn btn-neutral float-right" title="Getting Started">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
     </div>
@@ -143,7 +167,7 @@ docs/
       
       
       
-        <span style="margin-left: 15px"><a href="quickstart/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="gettingstarted/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
@@ -161,5 +185,5 @@ docs/
 
 <!--
 MkDocs version : 1.1.2
-Build Date UTC : 2021-06-06 00:18:33.395100+00:00
+Build Date UTC : 2021-06-06 17:04:31.286187+00:00
 -->
