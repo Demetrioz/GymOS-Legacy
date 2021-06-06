@@ -1,5 +1,7 @@
 site_name: GymOS
 nav:
   - Introduction: index.md
-  - Quickstart: quickstart.md
+  - Getting Started: gettingstarted.md
+  - Support: support.md
+  - Developer Reference: devreference.md
 theme: readthedocs
