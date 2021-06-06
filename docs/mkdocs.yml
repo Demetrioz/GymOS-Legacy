@@ -1,0 +1,5 @@
+site_name: GymOS
+nav:
+  - Introduction: index.md
+  - Quickstart: quickstart.md
+theme: readthedocs
