@@ -1,1 +1,9 @@
+.vs/
+Client/bin/
+Client/obj/
 docs/site/
+Server/appsettings.*
+Server/bin/
+Server/obj/
+Shared/bin/
+Shared/obj/
