@@ -187,6 +187,8 @@ namespace GymOS.Migrations
             Delete.Table("AspNetUserTokens");
             Delete.Table("AspNetRoles");
             Delete.Table("AspNetUsers");
+            Delete.Table("DeviceCodes");
+            Delete.Table("PersistedGrants");
         }
     }
 }
