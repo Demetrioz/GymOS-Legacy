@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymOS.Server", "Server\GymOS.Server.csproj", "{10DDF801-7E7D-44EE-99BF-FADAB0E364D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GymOS.Server", "GymOS.Server\GymOS.Server.csproj", "{10DDF801-7E7D-44EE-99BF-FADAB0E364D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymOS.Client", "Client\GymOS.Client.csproj", "{FBDD6FBE-4A1F-4993-B055-6AC7C071274B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GymOS.Client", "GymOS.Client\GymOS.Client.csproj", "{FBDD6FBE-4A1F-4993-B055-6AC7C071274B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymOS.Shared", "Shared\GymOS.Shared.csproj", "{7D41EC60-CB56-466F-80FB-622B757B4AA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GymOS.Shared", "GymOS.Shared\GymOS.Shared.csproj", "{7D41EC60-CB56-466F-80FB-622B757B4AA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymOS.DataModel", "GymOS.DataModel\GymOS.DataModel.csproj", "{C7867072-5DED-4B2B-B6AB-D12D2C691A92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymOS.Migrations", "GymOS.Migrations\GymOS.Migrations.csproj", "{FC100020-67C1-4FDA-809D-FF1280391234}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{7D41EC60-CB56-466F-80FB-622B757B4AA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D41EC60-CB56-466F-80FB-622B757B4AA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D41EC60-CB56-466F-80FB-622B757B4AA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7867072-5DED-4B2B-B6AB-D12D2C691A92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7867072-5DED-4B2B-B6AB-D12D2C691A92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7867072-5DED-4B2B-B6AB-D12D2C691A92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7867072-5DED-4B2B-B6AB-D12D2C691A92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC100020-67C1-4FDA-809D-FF1280391234}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC100020-67C1-4FDA-809D-FF1280391234}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC100020-67C1-4FDA-809D-FF1280391234}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC100020-67C1-4FDA-809D-FF1280391234}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
