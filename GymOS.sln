@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GymOS.Client", "GymOS.Clien
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GymOS.Shared", "GymOS.Shared\GymOS.Shared.csproj", "{7D41EC60-CB56-466F-80FB-622B757B4AA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymOS.DataModel", "GymOS.DataModel\GymOS.DataModel.csproj", "{C7867072-5DED-4B2B-B6AB-D12D2C691A92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GymOS.DataModel", "GymOS.DataModel\GymOS.DataModel.csproj", "{C7867072-5DED-4B2B-B6AB-D12D2C691A92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymOS.Migrations", "GymOS.Migrations\GymOS.Migrations.csproj", "{FC100020-67C1-4FDA-809D-FF1280391234}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GymOS.Migrations", "GymOS.Migrations\GymOS.Migrations.csproj", "{FC100020-67C1-4FDA-809D-FF1280391234}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymOS.Services", "GymOS.Services\GymOS.Services.csproj", "{0E050D42-831B-4BAC-BE4E-208E7F7FF16E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{FC100020-67C1-4FDA-809D-FF1280391234}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC100020-67C1-4FDA-809D-FF1280391234}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC100020-67C1-4FDA-809D-FF1280391234}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E050D42-831B-4BAC-BE4E-208E7F7FF16E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E050D42-831B-4BAC-BE4E-208E7F7FF16E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E050D42-831B-4BAC-BE4E-208E7F7FF16E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E050D42-831B-4BAC-BE4E-208E7F7FF16E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

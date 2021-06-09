@@ -10,17 +10,19 @@ GymOS is free and open source, so you can [download](https://github.com/KMWillia
 
 ## Project Structure
 
-    Client/ # The Client project. This is what users actually interact with via the website.
-
-    DataModel/  # The DataModel and Database definitions.
-
     docs/   # The documentation files.
 
-    Server/ # The Server project. This is what is published to the host machine.
+    GymOS.Client/ # The Client project that users actually interact with via the web.
 
-    System/ # The Actor system that contains business logic for GymOS.
+    GymOS.DataModel/  # The DataModel and Database definitions.
+
+    GymOS.Migrations/ # The Database Migrations for each release
+
+    GymOS.Server/ # The Server project that is published to a host machine.
+
+    GymOS.System/ # The Actor system that contains business logic for GymOS.
     
-    Services/   # This is where the services that interact with third party systems reside.
+    GymOS.Services/   # This is where the services that interact with third party systems reside.
 
     LICENSE    # The MIT License file.
     README.md  # The project readme file.

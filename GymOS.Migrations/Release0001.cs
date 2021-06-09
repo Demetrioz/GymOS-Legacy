@@ -33,9 +33,11 @@ namespace GymOS.Migrations
                 .WithColumn("LockoutEnd").AsDateTimeOffset().Nullable()
                 .WithColumn("LockoutEnabled").AsBoolean().NotNullable()
                 .WithColumn("AccessFailedCount").AsInt32().NotNullable()
+                .WithColumn("Address").AsString(int.MaxValue).Nullable()
                 .WithColumn("City").AsString(int.MaxValue).Nullable()
-                .WithColumn("State").AsString(int.MaxValue).Nullable()
-                .WithColumn("Street").AsString(int.MaxValue).Nullable();
+                .WithColumn("State").AsString(40).Nullable()
+                .WithColumn("ZipCode").AsString(40).Nullable()
+                .WithColumn("BirthDate").AsDateTimeOffset().Nullable();
 
             Create.Table("DeviceCodes")
                 .WithColumn("UserCode").AsString(200).NotNullable().PrimaryKey()

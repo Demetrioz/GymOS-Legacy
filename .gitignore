@@ -9,5 +9,7 @@ GymOS.Migrations/obj/
 GymOS.Server/appsettings.*
 GymOS.Server/bin/
 GymOS.Server/obj/
+GymOS.Services/bin/
+GymOS.Services/obj/
 GymOS.Shared/bin/
 GymOS.Shared/obj/
