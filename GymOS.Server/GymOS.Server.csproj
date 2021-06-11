@@ -17,6 +17,7 @@
     <ProjectReference Include="..\GymOS.Client\GymOS.Client.csproj" />
     <ProjectReference Include="..\GymOS.DataModel\GymOS.DataModel.csproj" />
     <ProjectReference Include="..\GymOS.Migrations\GymOS.Migrations.csproj" />
+    <ProjectReference Include="..\GymOS.Services\GymOS.Services.csproj" />
     <ProjectReference Include="..\GymOS.Shared\GymOS.Shared.csproj" />
   </ItemGroup>
 

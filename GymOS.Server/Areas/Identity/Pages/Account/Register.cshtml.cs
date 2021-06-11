@@ -14,6 +14,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
+using GymOS.Services.EmailService;
+using System.Net.Http;
 
 namespace GymOS.Server.Areas.Identity.Pages.Account
 {
@@ -24,10 +26,12 @@ namespace GymOS.Server.Areas.Identity.Pages.Account
         private readonly UserManager<GymOSUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
+        private IEmailService EmailService { get; set; }
 
         public RegisterModel(
             UserManager<GymOSUser> userManager,
             SignInManager<GymOSUser> signInManager,
+            IEmailService emailService,
             ILogger<RegisterModel> logger,
             IEmailSender emailSender)
         {
@@ -35,6 +39,7 @@ namespace GymOS.Server.Areas.Identity.Pages.Account
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
+            EmailService = emailService;
         }
 
         [BindProperty]

@@ -1,4 +1,5 @@
 ﻿using FluentMigrator;
+using GymOS.Migrations.Extensions;
 
 namespace GymOS.Migrations
 {
@@ -174,6 +175,19 @@ namespace GymOS.Migrations
                 .OnColumn("SubjectId").Ascending()
                 .OnColumn("SessionId").Ascending()
                 .OnColumn("Type");
+
+            // ************************************
+            //          Generic Tables
+            // ************************************
+
+            Create.Table("GymOSLog")
+                .WithId("GymOSLogId")
+                .WithColumn("LogLevel").AsInt32().Nullable()
+                .WithColumn("Message").AsString(int.MaxValue).Nullable()
+                .WithColumn("Data").AsString(int.MaxValue).Nullable()
+                .WithColumn("Created").AsDateTimeOffset().Nullable()
+                .WithColumn("Modified").AsDateTimeOffset().Nullable()
+                .WithColumn("IsDeleted").AsBoolean().Nullable();
         }
 
         public override void Down()
@@ -191,6 +205,12 @@ namespace GymOS.Migrations
             Delete.Table("AspNetUsers");
             Delete.Table("DeviceCodes");
             Delete.Table("PersistedGrants");
+
+            // ************************************
+            //          Generic Tables
+            // ************************************
+
+            Delete.Table("GymOSLog");
         }
     }
 }
