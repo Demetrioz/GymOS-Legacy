@@ -54,9 +54,13 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#features">Features</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#release-notes">Release Notes</a>
-    </li>
     <li class="toctree-l2"><a class="reference internal" href="#roadmap">Roadmap</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#release-notes">Release Notes</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#release-1">Release 1:</a>
+    </li>
+        </ul>
     </li>
     </ul>
                     </li>
@@ -111,27 +115,46 @@
 <p>It's also designed to work with various outside systems to offload tasks such as email marketing, text and email reminders, payment processing and more.</p>
 <p>GymOS is free and open source, so you can <a href="https://github.com/KMWilliams-Dev/GymOS/releases">download</a>, build, and deploy the application yourself folowing the documentation, or you can contact me via <a href="mailto:kevin.williams@kevinwilliams.dev">mail</a> or <a href="https://discord.gg/22ZaTAZP45">Discord</a> and I can deploy it on your behalf for a small fee.</p>
 <h2 id="project-structure">Project Structure</h2>
-<pre><code>Client/ # The Client project. This is what users actually interact with via the website.
+<pre><code>docs/   # The documentation files.
 
-DataModel/  # The DataModel and Database definitions.
+GymOS.Client/ # The Client project that users actually interact with via the web.
 
-docs/   # The documentation files.
+GymOS.DataModel/  # The DataModel and Database definitions.
 
-Server/ # The Server project. This is what is published to the host machine.
+GymOS.Migrations/ # The Database Migrations for each release
 
-System/ # The Actor system that contains business logic for GymOS.
+GymOS.Server/ # The Server project that is published to a host machine.
 
-Services/   # This is where the services that interact with third party systems reside.
+GymOS.System/ # The Actor system that contains business logic for GymOS.
+
+GymOS.Services/   # This is where the services that interact with third party systems reside.
 
 LICENSE    # The MIT License file.
 README.md  # The project readme file.
 </code></pre>
 <h2 id="features">Features</h2>
-<p>Coming Soon!</p>
-<h2 id="release-notes">Release Notes</h2>
-<p>Coming Soon!</p>
+<ul>
+<li>Member registration and authentication</li>
+</ul>
 <h2 id="roadmap">Roadmap</h2>
-<p>Coming Soon!</p>
+<p>Below you will find a list of our tentative release and target dates. We're 
+ways looking for ways to improve, so if there's something you don't see but would
+like, contact me or submit an issue on github!</p>
+<ul>
+<li>[ ] Release 1 (1 Jan, 2022)<ul>
+<li>[ ] Public facing informational website</li>
+<li>[x] <del>Member registration</del></li>
+<li>[ ] Class Schedule</li>
+<li>[ ] Email Marketing Integration</li>
+<li>[ ] Member / Instructor Portal</li>
+</ul>
+</li>
+</ul>
+<h2 id="release-notes">Release Notes</h2>
+<h3 id="release-1">Release 1:</h3>
+<ul>
+<li>Coming Soon!</li>
+</ul>
               
             </div>
           </div>
@@ -185,5 +208,5 @@ README.md  # The project readme file.
 
 <!--
 MkDocs version : 1.1.2
-Build Date UTC : 2021-06-06 17:04:31.286187+00:00
+Build Date UTC : 2021-06-12 16:08:44.745699+00:00
 -->
