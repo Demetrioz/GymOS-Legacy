@@ -1,7 +1,13 @@
 ﻿@page "/"
+@inherits IndexBase
 
-<h1>Hello, world!</h1>
-
-Welcome to your new app.
-
-<SurveyPrompt Title="How is Blazor working for you?" />
+<div id="index" class="base">
+    <div id="navigation-cards" class="navigation">
+        <NavigationCard Destination="Schedule"/>
+        <NavigationCard Destination="About" />
+        <NavigationCard Destination="Portal" />
+    </div>
+    <div id="call-to-action" class="cta">
+        <PrimaryButton Text="Join the Community!" ClickAction="@HandleJoin"/>
+    </div>
+</div>

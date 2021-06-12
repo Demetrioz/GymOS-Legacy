@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GymOS.DataModel", "GymOS.Da
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GymOS.Migrations", "GymOS.Migrations\GymOS.Migrations.csproj", "{FC100020-67C1-4FDA-809D-FF1280391234}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GymOS.Services", "GymOS.Services\GymOS.Services.csproj", "{0E050D42-831B-4BAC-BE4E-208E7F7FF16E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GymOS.Services", "GymOS.Services\GymOS.Services.csproj", "{0E050D42-831B-4BAC-BE4E-208E7F7FF16E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
