@@ -29,12 +29,22 @@ GymOS is free and open source, so you can [download](https://github.com/KMWillia
 
 ## Features
 
-Coming Soon!
-
-## Release Notes
-
-Coming Soon!
+- Member registration and authentication
 
 ## Roadmap
 
-Coming Soon!
+Below you will find a list of our tentative release and target dates. We're 
+ways looking for ways to improve, so if there's something you don't see but would
+like, contact me or submit an issue on github!
+
+- [ ] Release 1 (1 Jan, 2022)
+    - [ ] Public facing informational website
+    - [x] <del>Member registration</del>
+    - [ ] Class Schedule
+    - [ ] Email Marketing Integration
+    - [ ] Member / Instructor Portal
+
+## Release Notes
+
+### Release 1:
+- Coming Soon!
