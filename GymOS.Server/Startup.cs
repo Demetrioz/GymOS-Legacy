@@ -6,11 +6,16 @@ using GymOS.Services.EmailService.MailchimpService;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
+using System;
+using System.Linq;
 using System.Net.Http;
+using System.Threading.Tasks;
 
 namespace GymOS.Server
 {
@@ -25,10 +30,13 @@ namespace GymOS.Server
 
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
-        public void ConfigureServices(IServiceCollection services)
+        public async void ConfigureServices(IServiceCollection services)
         {
             ServerSettings settings = new ServerSettings();
             Configuration.GetSection("ServerSettings").Bind(settings);
+
+            // Make settings available via DI
+            services.Configure<ServerSettings>(Configuration.GetSection("ServerSettings"));
 
             services.AddDbContext<GymOSContext>(options =>
                 options.UseSqlServer(
@@ -37,6 +45,7 @@ namespace GymOS.Server
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddDefaultIdentity<GymOSUser>()//options => options.SignIn.RequireConfirmedAccount = true)
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<GymOSContext>();
 
             services.AddIdentityServer()
@@ -55,6 +64,8 @@ namespace GymOS.Server
                 IHttpClientFactory factory = provider.GetService<IHttpClientFactory>();
                 return new MailchimpService(factory, settings.EmailServiceSettings);
             });
+
+            await RunOneTimeSetup(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -89,6 +100,51 @@ namespace GymOS.Server
                 endpoints.MapControllers();
                 endpoints.MapFallbackToFile("index.html");
             });
+        }
+
+        private async Task RunOneTimeSetup(IServiceCollection services)
+        {
+            IServiceScopeFactory scopeFactory = services
+                .BuildServiceProvider()
+                .GetService<IServiceScopeFactory>();
+
+            using (IServiceScope scope = scopeFactory.CreateScope())
+            {
+                IServiceProvider provider = scope.ServiceProvider;
+                using (GymOSContext context = provider.GetService<GymOSContext>())
+                {
+                    GymOSUser user = context.Users
+                        .Where(u => u.Id != null)
+                        .FirstOrDefault();
+
+                    IdentityRole role = context.Roles
+                        .Where(r => r.Id != null)
+                        .FirstOrDefault();
+
+                    if(user == null && role == null)
+                    {
+                        RoleManager<IdentityRole> roleManager = provider.GetService<RoleManager<IdentityRole>>();
+                        UserManager<GymOSUser> userManager = provider.GetService<UserManager<GymOSUser>>();
+                        ServerSettings settings = provider.GetService<IOptions<ServerSettings>>().Value;
+
+                        foreach(string roleName in settings.DefaultRoles)
+                            await roleManager.CreateAsync(new IdentityRole 
+                            { 
+                                Name = roleName
+                            });
+
+                        GymOSUser adminUser = new GymOSUser
+                        {
+                            Email = settings.DefaultUser.Email,
+                            UserName = settings.DefaultUser.Email,
+                        };
+
+                        await userManager.CreateAsync(adminUser);
+                        await userManager.AddPasswordAsync(adminUser, settings.DefaultUser.Password);
+                        await userManager.AddToRoleAsync(adminUser, settings.DefaultUser.Role);
+                    }
+                }
+            }
         }
     }
 }
